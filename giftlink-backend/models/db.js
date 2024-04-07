@@ -12,17 +12,18 @@ async function connectToDatabase() {
     if (dbInstance){
         return dbInstance
     };
+   
+    const client = new MongoClient(url);   
+    // const client = new MongoClient(uri, { useUnifiedTopology: true });
+    
+    // Connect to MongoDB
+    await client.connect()
 
-    const client = new MongoClient(url);      
+    // Connect to database giftDB and store in variable dbInstance
+    const dbInstance = client.db('giftDB')
 
-    // Task 1: Connect to MongoDB
-    // {{insert code}}
-
-    // Task 2: Connect to database giftDB and store in variable dbInstance
-    //{{insert code}}
-
-    // Task 3: Return database instance
-    // {{insert code}}
+    // Return database instance
+    return dbInstance
 }
 
 module.exports = connectToDatabase;
