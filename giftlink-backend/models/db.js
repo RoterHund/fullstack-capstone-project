@@ -6,13 +6,13 @@ const MongoClient = require('mongodb').MongoClient;
 let url = `${process.env.MONGO_URL}`;
 
 let dbInstance = null;
-const dbName = "giftdb";
+const dbName = `${process.env.MONGO_DB}`;
 
 async function connectToDatabase() {
-    if (dbInstance){
-        return dbInstance
-    };
-   
+    if (dbInstance) {
+        return dbInstance;
+    }
+
     const client = new MongoClient(url);   
     // const client = new MongoClient(uri, { useUnifiedTopology: true });
     
@@ -20,7 +20,7 @@ async function connectToDatabase() {
     await client.connect()
 
     // Connect to database giftDB and store in variable dbInstance
-    const dbInstance = client.db('giftDB')
+    dbInstance = client.db(dbName)
 
     // Return database instance
     return dbInstance
