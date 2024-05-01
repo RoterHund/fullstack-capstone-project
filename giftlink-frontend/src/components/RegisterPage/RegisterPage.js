@@ -71,7 +71,7 @@ function RegisterPage() {
                                     className="form-control"
                                     placeholder="Enter your first name"  
                                     value={firstName}
-                                    onchange={(e) => setFirstName(e.target.value)}
+                                    onChange={(e) => setFirstName(e.target.value)}
                                 />
                                 <label htmlFor="lastName" className="form-label">Last Name</label>
                                 <input
@@ -80,7 +80,7 @@ function RegisterPage() {
                                     className="form-control"
                                     placeholder="Enter your last name"
                                     value={lastName}
-                                    onchange= {(e) => setLastName(e.target.value)}
+                                    onChange= {(e) => setLastName(e.target.value)}
                                 />
                             </div>
                             <div className="mb-3">            
