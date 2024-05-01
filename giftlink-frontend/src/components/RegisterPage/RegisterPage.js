@@ -102,7 +102,7 @@ function RegisterPage() {
                                     className="form-control"
                                     placeholder="Enter your password"
                                     value={password}
-                                    onchange={(e) => setPassword=(e.target.value)}
+                                    onChange={(e) => setPassword(e.target.value)}
                                 />
                             </div>
                             <div>
